@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 
 public class ResultsActivity extends AppCompatActivity {
@@ -13,10 +14,11 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
         ImageView imageView = (ImageView) findViewById(R.id.displayImage);
-
         byte[] byteArrayExtra = getIntent().getByteArrayExtra("photo");
         Bitmap image = BitmapFactory.decodeByteArray(byteArrayExtra, 0, byteArrayExtra.length);
         imageView.setImageBitmap(image);
+        Log.d("PhotoTaken","photo displayed");
+
 
     }
 }
