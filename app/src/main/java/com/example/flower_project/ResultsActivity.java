@@ -13,11 +13,14 @@ public class ResultsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
+
         ImageView imageView = (ImageView) findViewById(R.id.displayImage);
+        // Retrieve photo from MainActivity
         byte[] byteArrayExtra = getIntent().getByteArrayExtra("photo");
         Bitmap image = BitmapFactory.decodeByteArray(byteArrayExtra, 0, byteArrayExtra.length);
+        // Displays photo
         imageView.setImageBitmap(image);
-        Log.d("PhotoTaken","photo displayed");
+//        Log.d("PhotoTaken","photo displayed");
 
 
     }
